@@ -1,0 +1,20 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile scripts
+        run: python -m py_compile scripts/*.py
+      - name: Scaffold and check a sample pack
+        run: |
+          python scripts/scaffold_pack.py --root /tmp/sample-pack --title "Test Pack" --modules "TopicA,TopicB,Project" --mode deep
+          python scripts/check_pack.py --root /tmp/sample-pack --require-readme-index
