@@ -1,5 +1,7 @@
 # teaching-pack
 
+[![ci](https://github.com/shenself929/teaching-pack/actions/workflows/ci.yml/badge.svg)](https://github.com/shenself929/teaching-pack/actions/workflows/ci.yml)
+
 > 一次性把任意知识主题做成一套可自学的完整教学包。
 
 安装位置（用户级）：
